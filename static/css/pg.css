@@ -1,0 +1,85 @@
+@charset "utf-8"
+
+img{max-width: 100%;}
+body{font: normal 100% serif;}
+h1{
+font-size: 1.2em;font-family: serif;
+color: black;border-bottom: 1px solid;
+}
+
+h2{
+font-size: 1em;font-family: serif;
+color: black;
+}
+
+#tag{margin-top: -1.1em;font-size: .6em;text-align: center;}
+
+
+#navigation{
+display: grid;grid-template-rows: 1fr;grid-template-columns: 1fr 2fr;
+grid-template-areas: "menuicon cancel siteid"
+                     ;
+}
+#menuicon{grid-area: menuicon;}
+#name{grid-area: siteid;margin-right: 1em;}
+#cancel{grid-area: cancel;margin-left: -4em;padding: 0em;}
+
+li{
+display: block;list-style-type: none;font-size: 1em;font-family: serif;
+width: 10em;
+text-align: center;padding: 1em 1em;background-color: white;
+
+}
+#drop{ display: block;
+margin-top: 2em; 
+border: 1px solid;border-radius: .5em;
+
+}
+
+button{border: none;padding-top: 0em;}
+
+a{color: blue;text-decoration: none;}
+
+a:link {color: blue;}
+a:visited {color: brown;font-weight: bold;}
+a:focus {color: #c700f2;background-color: #fff;}
+a:hover {color: #c700f2; background-color: #fff;}
+a:active {color: blue; background-color:#fff;}
+
+
+#browse{display: none;}
+@media screen and (min-width: 375px){
+    #name{margin-right: 2.5em;}
+}
+@media screen and (min-width: 425px){
+    #name{margin-right: 4.5em;}
+    h3{font-size: 1.2em;}
+    #tag{margin-top: -2em;}
+    li{text-align: center;font-size: 1.05em;
+}}
+
+
+@media screen and (min-width: 768px){
+    #name{margin-right: 14em;}
+    h3{font-size: 1em;}
+    #cancel{margin-left: -4.8em;padding: 0em;}
+#menu{margin-left: .5em;}}
+@media screen and (min-width: 1024px){
+#navigation, #drop{display: none;}
+
+
+#tag{font-size: .7em;margin-top: -1em;margin-left: -11em;}
+#navL{ul,li{display: flex; justify-content: flex-start;}
+
+
+li{font-size: 1.1em;font-weight: 300;padding: 0em;
+}}
+#browse{display: grid;grid-template-rows: 1fr;grid-template-columns: 1fr 1fr;
+grid-template-areas: "siteid  nav ";
+                     }
+#name{grid-area: siteid;}
+#navL{grid-area: nav;}}
+h1{font-size: 1.7em;margin-top: 4em;text-align: center;
+ }
+h2{font-size: 1.5em;font-family: serif;align: left;padding: none;border: none;
+}
