@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head><meta name="viewport" content=" width=device-width,
+        intial-scale=1">
+        
+        
+        <style>
+         
+h1{font-size: 2em;text-align: center;line-height: 1.5em;}
+#about_me{font-size: 1.2em;line-height: 1.8em;margin-left: .5em;}
+#get_in_touch{margin: 12% 0em 5em 28%;padding-top: .6em;font-size: 1.2em;width: 7em;height: 2em;
+  text-align: center;background-color: green;border: 3px solid white;}
+.click_me{margin-top: -2.5em;}
+
+#click_service{margin-left: 13em;}
+#click_work{margin-left: 8em;}
+  .services, .works{margin-bottom: 2em;line-height: 1.6em;}
+  #service_header, #work_header{margin-top: 2em;}
+#work_detail, #service_detail{margin-top: 2em;}
+.roman{display: none;}
+@media screen and (min-width: 375px){
+  #about_me{margin-left: .6em;}
+  #get_in_touch{margin: 13% 0em 5em 30.5%;}
+}
+  @media screen and (min-width: 425px){
+    #get_in_touch{margin-left: 7em;}
+    .services, .works{margin-right: .5em;}
+    #service{margin-bottom: 6em;}
+    #service_header,#work_header{margin-bottom: 2em;}
+    #about_me{margin-left: .4em;}
+  }
+  @media screen and (min-width: 768px){
+    #about_me{width: 20em;grid-area: about;margin-left: 1em;}
+    #img{height: 20em;margin-left: 1em;grid-area: img;}
+    intro{display: grid;grid-template-columns: .7fr 1fr;grid-template-rows: 1fr;
+      grid-template-areas: "about img";margin: 5em 1em 6em 0em;}
+   
+      #get_in_touch{margin: -.5em 0em 0em 7em;}
+      .services, .works{margin: 2em 0em 1em 0em;}
+      #service{margin-bottom: 3em;}
+      #service_header, #work_header{margin: 3em 0em 2em 0em;}
+      #service_detail{display: grid;grid-template-columns: 20em 20em;grid-template-rows: 1fr 1fr;
+grid-template-areas: 'service';
+    }
+    .services{margin: 0em 2em 0em 2em;p{font-size: 1.1em;}}
+   #header{margin: -1em 0em 3em 0em;}
+  }
+  
+          @media screen and (min-width: 1024px){
+
+intro{display: grid;grid-template-columns: 20em 30em;grid-template-rows: 1fr;
+grid-template-areas: "about img";margin: 6em 0em 0em 1%;}
+#img{grid-area: img;height: 27em;margin-left: 10em;}
+#welcomeblurb{grid-area: about;line-height: 1.8em;font-size: 1.1em;}
+#get_in_touch{font-size: 1.2em;width: 8em;
+margin: -4em 0em 0em 44.7%;}
+#service{background-color: #232122;}
+#header{font-size: 3.6em;line-height: 1.4em;color: white;text-align: center;margin: .5em 0em 0em 0em;}
+#about_me{color: white;margin: 4em 1em 0em 1em;
+  }
+  #service_detail{display: grid;grid-template-columns: 15em 15em 15em 15em;grid-template-rows: 1fr;
+grid-template-areas: 'service';line-height: 1.6em;font-size: 1em;margin: 3em 0em 3em -3em;
+}
+#work_detail, #service_detail{list-style-type: none;}
+#work_detail{display: grid;grid-template-columns: 1fr 1fr 1fr;grid-template-rows: 1fr;
+grid-template-areas: 'service';line-height: 1.6em;text-align: center;font-size: 1.1em;margin: 3em 0em 3em 4em;
+}
+.services, .works{border-left: 3px solid white;}
+.services{padding-left: 1em;}
+.works{color: white;border-radius: 22em;width: 10em;padding: 4em .5em;margin-left: -1em;}
+.works{animation: uno 3s linear infinite alternate;}
+       @keyframes uno{
+        from {transform: translateY(-60px);}
+        to{transform: translateY(30px);}}
+h2{color: white;}
+#avventura{background-image: url('/static/img/blu.jpeg');}
+       #montagna{background-image: url('/static/img/14.webp');}
+       #sea{background-color: black;color: white;padding: 4.5em .5em;}
+       #avventura, #montagna, #sea{background-size: 15em 14em;background-repeat: no-repeat;}
+       #service_header, #work_header{color: white;padding-top: 1em;}
+    #work{background-color: #232122;}
+    #service, #work{margin: -4em 3em 5em 2em;border-radius: 1em;padding-bottom: 4em;width: 94%;}
+    #service_header,#work_header{margin-left: .5em;}
+    .roman{margin-top: 0em;color: black;font-weight: bolder;font-size: 1.2em;display: block;}
+   hr{margin-top: 6em;}
+   h3{font-size: 1.1em;}
+   .services{p{font-size: 1em;}}
+}
+
+
+         @media screen and (min-width: 1440px){
+
+intro{display: grid;grid-template-columns: 1fr 1fr;grid-template-rows: 1fr;
+    grid-template-areas: "about img";margin: 8em 0em 0em 1%;padding-bottom: 10em;}
+#img{grid-area: img;height: 36em;margin-left: 2em;width: 40em;}
+#welcomeblurb{grid-area: about;font-size: 1.2em;}
+#get_in_touch{margin: -20% 0em 0em 34.5%;}
+
+#header{font-size: 4em;margin: .5em 0em 0em 1em;width: 20em;}
+#about_me{line-height: 1.6em;margin: 6em 0em 0em 4em;width: 21em;
+}
+#service_detail{font-size: 1.2em;list-style-type: none;display: grid;grid-template-columns: 16em 16em 16em 16em;grid-template-rows: 1fr;
+grid-template-areas: 'service';line-height: 1.6em;margin-left: -1em;}
+.services{margin-right: 3em;}
+#work_detail{display: grid;grid-template-columns: 19em 19em 19em;grid-template-rows: 1fr;
+grid-template-areas: 'service';margin: 5em 0em 5em 20%;}
+.works{padding: 5.5em 2em;font-size: 1.2em;margin-left: -65%;}
+.services{p{font-size: 1em;}}
+#service, #work{margin: -5em 5em 5em 6.5em;padding-bottom: 3em;width: 85%;}
+
+hr{margin-top: 0em;}
+#sea{margin-left: -4em;padding: 6em 2em;}
+#montagna{margin-left: -7em;}   
+h3{font-size: 1.1em;}
+
+
+}
+
+        </style>
+
+    </head>
+    <body>
+        {%extends 'base_port.html'%}
+      {%block content%}
+     <div id="contenuto">
+      <h1 id="header">WEB DESIGNER, DEVELOPER & USABILITY CONSULTANT.</h1>
+    
+      <intro>
+      
+
+        
+    <img id="img" src="/static/img/venice.jpeg">
+    
+    <div id="welcomeblurb">
+     
+        <p id="about_me"> Hi! I'm Joandarc. I have a great passion for designing and developing usability tested websites.<br>
+           It's my pleasure to help people leverage the internet to make their goods and services accessible to millions.
+          </div> <a href="{%url 'contact_port'%}"><p id="get_in_touch" class="button"> Get in touch</p></a>
+        </intro>
+        <hr>
+          <div id="service">
+           
+        <h2 id="service_header">  Services I provide:</h2>
+          <ul id="service_detail">
+            
+            <li class="services"><p class="roman">I</p><h3>Front-end</h3>
+
+         <p> Get delightful websites with great design, responsive and with fast loading-time(performance).
+
+            </p></li>
+           
+           
+            <li class="services" > <p class="roman">II</p> <h3>Back-end</h3> <p>I make websites with the backend part developed using python's framework django.</p></li>
+           
+         <li class="services"><p class="roman">III</p><h3>Usability</h3><p>I do usability testing on websites to make sure that they are user-friendly and usable.</p></li>
+        
+         <li class="services"><p class="roman">IV</p><h3>Full package</h3><p>Get a website with all this features, capable of conveying your ideas clearly and concisely to your target audience.</p></li>
+           </ul></div>
+           <hr>
+           <div id="work">
+           <h2 id="work_header">  My works:</h2>
+           <ul id="work_detail">
+         
+            <a href="{%url 'home' %}"> <li class="works" id="avventura">  AdventureUs Blog (blog project)</li></a>
+            <a href="{% url 'home_pg'%}"> <li class="works" id="montagna"> Pasticceria Gattolina (online-shop)</li></a>
+            <a href="{%url 'points'%}"> <li class="works" id="sea">   Points (django project)</li></a> 
+
+
+           </ul></div></div>
+          </div>
+{%endblock%}
+  
+
+    </body>
+
+</html>   

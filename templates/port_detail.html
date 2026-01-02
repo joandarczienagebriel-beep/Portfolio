@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+       
+        #port{padding: .4em;line-height: 1.8em;}
+        @media screen and (min-width: 425px) {
+          #port{padding: .8em;}
+        }
+        @media screen and (min-width: 768px) {
+          h2{font-size: 1.4em;}
+        }
+ @media screen and (min-width: 1440px){
+
+ 
+      #port{display: grid;grid-template-columns: 1fr .6fr;grid-template-rows: 1fr;
+              grid-template-areas: "title title"
+                                   "img    body";
+                               margin: -3em 2em 0em 1em;}
+        #title{grid-area: title;}
+        #body{grid-area: body;line-height: 1.8em;font-size: 1.2em;background-color: #98999b;border-radius: 1em;height: 15em;margin-top: 5em;padding: 1em;}
+    img{grid-area: img;width: 40em;margin-top: 4em;background-color: #98999b;padding: 4em;border-radius: 1em;}
+ } 
+      </style>
+    </head>
+    <body>
+        {%extends 'base_port.html'%}
+        
+      {%block content%}
+      <div id="port">
+        <h2 id="title">{{portfolio.title}}</h2>
+        <p id="body">{{portfolio.body}}</p>
+        <img src="/static/img/sea.jpeg">
+      </div>
+        {%endblock%}
+
+    </body>
+</html>

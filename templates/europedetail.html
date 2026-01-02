@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <style>
+         
+         @media screen and (min-width: 768px) {
+ 
+}
+              @media screen and (min-width: 1024px) {
+             #body{text-align: center;}
+            #postdetail{margin-left: 4%;}}
+            @media screen and (min-width: 1440px) {
+              #postdetail{margin-left: -2em;}
+              #title_detail,#info{margin-left: 4em;}
+            }
+            </style>
+
+    </head>
+    <body>
+        {% extends 'base.html'%}
+        {%block content%}
+        {% include "nav.html" with active_link='europe_detail' %}
+      <div class="content">
+        <div class="content_detail">
+        <div id="detailpage">
+<div id="postdetail">
+<h2 id="title_detail">{{europe.title}}</h2>
+<p id="info">by {{europe.author}} | {{europe.date}}</p>
+
+
+<p id="body">{{europe.body}}</p>
+
+</div>
+<div id="comment">
+  <h4>Comments</h4>
+  
+  {% for comment in europe.commenteurope_set.all %}
+     <p id="comment_author">{{comment.author}}</p>
+     <p id="comment_given">{{comment}}</p>
+   
+     {%endfor%}
+  </div>
+     <h4>Add a comment</h4>
+<form action="" method="post" id="comment_form">{% csrf_token %}
+{{ form.as_p }}
+<button type="submit" id="save">Save</button>
+</form>
+
+
+
+    
+    <div id="recentpost_detail"><h4>Recent posts</h4>
+        <ol>
+          <a href=""><li>"Nothing was changing in my"</li></a>
+        <a href=""><li>"Believe that I just needed."</li></a>
+      <a href=""><li>"I started to listen to various."</li></a>
+    </ol>
+    <h4><a href="">About Us</a></h4>
+    <ol>
+            <li><a href="">facebook</a></li>
+             <li><a href="">LinkedIn</a></li>
+             <li><a href="">Instagram</a></li>
+            </ol>
+   
+</div>
+        </div>
+        </div>
+{%endblock%} 
+
+    </body>
+</html>

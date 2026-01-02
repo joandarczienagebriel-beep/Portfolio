@@ -1,0 +1,244 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<meta charset='utf-8'>
+<head>
+    
+
+    <script src="{%static 'js/jquery-3.7.1.js'%}"></script>
+<meta name="viewport" content="width=device-width, 
+ initial-scale=1">
+<title>navigation</title>
+
+<style>
+
+.headers{font-size: 1.4em;margin: 2em 0em -.5em 0em;}
+#tag{margin-left: -5em;color: white;}
+a{text-decoration: none;}
+a:link{color: white;}
+a:visited{color: black;}
+
+img{max-width: 100%;}
+body{font: normal 100%;}
+h1{
+font-size: 1.2em;
+margin-bottom: 2em;
+}
+#site_name{a{color: white;}}
+#tag{margin-top: -1.1em;font-size: .6em;text-align: center;color: white;margin-left: -1.7em;}
+
+
+#navigation{
+display: grid;grid-template-rows: 1fr;grid-template-columns: 1fr 2fr;
+grid-template-areas: "menuicon cancel siteid";padding-bottom: .5em;
+background-color: #004b98;margin: -.5em -.5em 0em -.5em;
+
+}
+
+#menuicon{grid-area: menuicon;}
+#name{grid-area: siteid;margin-right: 3em;margin-left: -1em;}
+#cancel{grid-area: cancel;margin-left: -4em;padding: 0em;}
+li{list-style-type: none;font-size: 1em;}
+#drop{ display: block;position: absolute;
+margin-top: -.1em;border-bottom: 2px solid white;
+width: 90%;margin-left: -1em;
+li{
+border-bottom: 2px solid white;background-color: #004b98;margin-left: -2.5em;padding: 1em;text-align: center;
+
+}
+a{color: white;}
+
+}
+
+button{border: none;padding-top: 0em;background-color: #004b98;}
+
+
+h2{font-size: 1em;width: 15em;margin-left: 1em;}
+#today{margin-top: 4em;}
+#name{margin-top: .5em;}
+#drop_1024{display: none;}
+.footer{li{background-color: white;color: black;line-height: 1.8em;text-align: start;}}
+
+footer{margin-top: 1em;font-size: .8em;margin-left: -1.5em;
+    display: grid;grid-template-rows: 1fr;grid-template-columns: 8em 8em 8em;grid-template-areas: 'footer';}
+    .footer_header{font-weight: bold;}
+h3{font-size: .95em;font-weight: 500;}
+@media screen and (min-width: 375px){
+    #name{margin-right: 3.5em;}
+    #drop{width: 91.5%;}
+footer{margin-left: .5em;}
+}
+@media screen and (min-width: 425px){
+    #name{margin-right: 5em;}
+    h3{font-size: 1.2em;}
+    #tag{margin-top: -1em;}
+    li{text-align: center;font-size: 1.05em;
+}
+#drop{width: 92.5%;}
+footer{margin-left: 2.5em;}
+}
+@media screen and (min-width: 768px){
+    #name{margin-left: -35%;}
+    #tag{margin-left: -31%;}
+    #cancel{margin-left: -8em;}
+    h2{font-size: 1.3em;}
+    #drop{width: 20em;margin: -.2em 0em 0em 27%;
+    li{text-align: start;font-size: 1em;}}
+  .headers{font-size: 1.8em;}
+  #nav{margin-right: -.3em;}
+  footer{display: grid;grid-template-rows: 1fr;grid-template-columns: 10em 10em 10em;grid-template-areas: 'footer';margin-left: 1em;}
+    }
+@media screen and (min-width: 1024px){
+    #name{grid-area: name;margin-left: 34%;}
+    #tag{margin: -1.2em 0em 0em -45%;}
+    #menu, #cancel,#drop{display: none;}
+   #navigation{
+display: grid;grid-template-rows: 4em 2em;grid-template-columns: 1fr;
+grid-template-areas: "name"
+                     "drop"; }
+  #drop_1024{display: flex;flex-direction: row;font-size: .9em;grid-area: drop;margin-top: .1em;}
+  #drop_1024{margin: 1em 0em 0em 33%;
+    li{margin-right: 6em;}}
+    #navigation{height: 8em;}
+    .test{width: 6em;padding: .5em 1em .5em .5em;margin-top: .5em;margin-left: -6em;
+        border-bottom: none;}
+        .footer{margin-left: 4em;}
+        footer{display: grid;grid-template-rows: 1fr;grid-template-columns: 15em 15em 15em;grid-template-areas: 'footer';}
+    
+}
+@media screen and (min-width: 1440px){
+    h1{font-size: 2em;}
+    h2{font-size: 1.4em;}
+    #tag{margin-left: -59%;font-size: .7em;}
+    #drop_1024{margin-left: 38%;font-size: 1em;
+   }
+   
+    #name{margin-left: 38%;}
+    #navigation, #drop_1024, li{background-color: #004b98;}
+  #navigation{height: 8em;border-bottom: 2px solid white;margin-right: -.2em;width: 92.1em;}
+ .test{width: 6em;padding: .5em 1em .5em .5em;margin-top: 1em;margin-left: -6em;
+    border-bottom: none;}
+    footer{margin-left: -1em;}
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+    <div id="nav">
+    <div id="navigation">
+    
+        <div id="menu">
+        <button type="submit">
+        <svg width="50" height="50" viewBox="0 0 100 50">
+        <g id='rectangles' >
+        <rect x="10" y="30" width="65" height="4" fill="white" 
+         stroke-width="2" stroke="white"/>
+        <rect x="10" y="45" width="65" height="4" fill="white" 
+         stroke-width="2" stroke="white"/>
+        <rect x="10" y="60" width="65" height="4" fill="white" 
+         stroke-width="2" stroke="white" />
+        </g>
+        </svg>
+        </button>
+        </div>
+        
+        <div id="cancel">
+        <button type="submit">
+        <svg width="50" height="50" viewBox="0 0 100 50">
+        <polygon points="20,20 60,60 " fill="white" stroke-width="2" stroke="white"/>
+        <polygon points="60,20 20,60 " fill="white" stroke-width="2" stroke="white"/>
+        </svg>
+        </button>
+        </div>
+        
+        <div id="name">
+        <h2 id="site_name"><a href="{%url 'home_pg'%}">SWEATERERIA GATTOLINA</a></h2>
+                         
+        <p id="tag">MAKE YOUR LIFE COSIER</p>
+        </div>
+        <ul id="drop_1024">
+            <a href="{% url 'home_pg'%}"><li class="test">HOME</li></a>
+            <a href="{% url 'products_pg'%}"> <li class="test">SWEATERS</li></a>
+         
+            <a href="{% url 'about_pg'%}"> <li class="test">ABOUT US</li></a>
+            <a href="{% url 'contact_pg'%}"> <li id="bottom" class="test">CONTACT</li></a>
+           
+        </ul>
+        </div>
+   
+        <ul id="drop">
+            <li><a href="{% url 'home_pg'%}">Home</a></li>
+            <li><a href="{% url 'products_pg'%}">Sweaters</a></li>
+            <li><a href="{}">Weekly Specials</a></li>
+            <li><a href="{% url 'about_pg'%}">About Us</a></li>
+            <li id="bottom"><a href="{% url 'contact_pg'%}">Contact</a></li>
+        </ul>
+    </div>
+   
+    
+   
+    {%block content%}
+    {%endblock%}
+
+    <footer>
+   
+        <ul class="footer">
+         <li class="footer_header">Support</li> 
+         <a href="gattolina@gmail.com"><li>FAQ</li></a>
+         <a href="gattolina@instagram.com"><li>Forum</li></a>
+             <a href="gattolina@facebook.com"><li>Contact us</li></a>
+             </ul>
+       
+        <ul class="footer">
+         <li class="footer_header">Socials</li> 
+         <a href="gattolina@gmail.com"><li>Email</li></a>
+         <a href="gattolina@instagram.com"><li>Instagram</li></a>
+             <a href="gattolina@facebook.com"><li>Facebook</li></a>
+             </ul>
+             
+             <ul class="footer">
+                <li class="footer_header">Services</li> 
+                <a href="gattolina@gmail.com"><li>Shipping</li></a>
+                <a href="gattolina@instagram.com"><li>Marketing</li></a>
+                    <a href="gattolina@facebook.com"><li>Shop</li></a>
+                    </ul>
+     
+     </footer>  
+   
+    <script>
+        $('body').mouseover(function(){$('#1').fadeToggle(4000) });
+        $('body').mouseover(function(){$('#2').fadeToggle(4500) });
+        $('body').mouseover(function(){$('#3').fadeToggle(5000) });
+        $('body').mouseover(function(){$('#4').fadeToggle(5500) });
+        $('body').mouseover(function(){$('#5').fadeToggle(5600) });
+        $('body').mouseover(function(){$('#6').fadeToggle(4800) });
+        $('body').mouseover(function(){$('#7').fadeToggle(4100) });
+        $('body').mouseover(function(){$('#8').fadeToggle(6000) });
+        $('body').mouseover(function(){$('#9').fadeToggle(6900) });
+        $('body').mouseover(function(){$('#10').fadeToggle(65000) });
+        $('body').mouseover(function(){$('#11').fadeToggle(7000) });
+        $('body').mouseover(function(){$('#12').fadeToggle(6700) });
+        $('.test').mouseover(function(){$(this).css('border-radius','3px')}).mouseover(function(){$(this).css('margin-top','0em')})
+        .mouseover(function(){$(this).css('background-color','white')}).mouseover(function(){$(this).css('color','black')})
+        .mouseover(function(){$(this).css('border-color','black')});
+        $('.test').mouseleave(function(){$(this).css('border-radius','0px')}).mouseleave(function(){$(this).css('margin-top','1em')})
+        .mouseleave(function(){$(this).css('background-color','#004b98')}).mouseleave(function(){$(this).css('color','white')})
+        .mouseover(function(){$(this).css('border-color','white')});
+        $('#drop').css('display', 'none');
+$('#cancel').css('display', 'none');
+$('#menu').click(function(){$('#drop').show()})
+            .click(function(){$('#cancel').show()});
+$('#cancel').click(function(){$('#drop').hide()})
+            .click(function(){$(this).hide()});
+ $('#contenuto').click(function(){$('#drop').css('display', 'none')});
+ $('#contenuto').click(function(){$('#cancel').css('display', 'none')});
+
+$('a').mouseover(function(){$(this).css('text-decoration','underline')})
+     .mouseout(function(){$(this).css('text-decoration','none')});
+    </script>
+</body>
+</html>

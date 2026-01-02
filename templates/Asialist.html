@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+       h1{margin-top: 3em;}
+           
+            #sidebar{padding-left: 1em;
+                padding-top: 10em;
+                line-height: 2.5em;text-align: center;width: 20em;margin-left: 80%;margin-top: -85%;padding-right: 10%;
+            }
+            a, #sidebar{color: black;}
+       
+    
+       
+       #recentpost{margin-top: 10em;font-size: .8em;}
+       #onthepage{margin-top: 6em;}
+       h4{margin-right: 5em;}
+       img{margin-bottom: 4em;height: 25%;width: 25%;}
+    .blog{display: flex;flex-direction: column;align-items: center;margin-top: 6%;margin-bottom: 30%;margin-left: -50%;}
+    #title, #author{margin-top: -1em;}
+  li{padding-top: .8em;}
+ 
+            </style>
+
+    </head>
+    <body>
+        {% extends 'base.html'%}
+        {%block content%}
+        
+        <h1>SOUTH-EAST OF ASIA POSTS</h1>
+        <div class="blog">  
+{%for blog in bookreview_list%}
+
+   
+<p>{{blog.date}}</p>
+    <h3 id="title">{{blog.title}}</h3>
+<p id="author">by {{blog.author}} </p>
+
+
+<a href="{{blog.get_absolute_url}}"><p id="readmore">Read more</p></a>
+        
+{%endfor%}
+</div>
+
+<div id="sidebar">
+    
+    <div id="recentpost"><h4>Recent posts on East Africa</h4>
+        <ol>
+          <a href=""><li>"Nothing was changing in my"</li></a>
+        <a href=""><li>"Believe that I just needed."</li></a>
+      <a href=""><li>"I started to listen to various."</li></a>
+    </ol>
+   
+</div>
+    <div id="onthepage">
+    <h3>ON THE PAGE</h3>
+    
+ 
+    <ol><li><a href="">1. The formation of this K-pop group</a></li>
+     <li><a href="">2. Most popular songs</a></li>
+     <li><a href="">3. Is V the most handsome?</a></li>
+    
+    <li><a href="">4. The formation of this K-pop group</a></li>
+        <li><a href="">5.Most popular songs</a></li>
+        <li><a href="">6.Is V the most handsome?</a></li>
+    
+        <h4><a href="">About Us</a></h4>
+            <li><a href="">facebook</a></li>
+             <li><a href="">LinkedIn</a></li>
+             <li><a href="">Instagram</a></li>
+            </ol>
+          </div></div>
+          
+        {%endblock%}
+       
+    </body>
+</html>

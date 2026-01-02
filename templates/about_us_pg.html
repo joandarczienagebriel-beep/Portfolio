@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<meta charset='utf-8'>
+<head>
+<meta name="viewport" content="width=device-width, 
+ initial-scale=1">
+<title>navigation</title>
+<script src='jquery-3.7.1.js'></script>
+
+<style>
+
+img{max-width: 100%;}
+
+
+
+#slide_show{display: none;}
+#inspiration{font-size: 1.2em;line-height: 1.3em;padding: 1em;}
+#about_us{width: 15em;line-height: 1.8em;}
+#header{margin-left: 27%;margin-bottom: 1.5em;
+}
+
+
+@media screen and (min-width: 375px){
+
+    #about_us{margin-left: 1.3em;font-size: 1em;}
+    #header{margin-left: 30%;}
+}
+
+@media  screen and (min-width: 425px) {
+    #about_us{margin-left: 2.4em;}
+    #header{margin-left: 33%;}
+}
+  
+@media screen and (min-width: 768px){
+
+#about_us{font-size: 1.1em;width: 18em;margin-top: 2em;margin-left: 3.5em;}
+#inspiration{margin-left: 5.4em;}
+#header{margin-left: 30%;}
+}
+@media screen and (min-width: 1024px){
+    #inspiration{grid-area: ins;margin: -5.5em 0em -.45em -.4em;background-color: #ff5200;color: white;}
+#about_us{font-size: 1em;margin: 2em 0em 0em .5em;
+    text-align: left;line-height: 1.6em;
+    height: 16em;border-radius: 1em;}
+
+#about{display: grid;grid-template-columns: 25em 1fr;grid-template-rows: 1fr;
+   grid-template-areas: 'ins slide';
+margin-top: 6.6em;}
+   #slide_show{grid-area: slide;display: grid;margin: -5.5em 0em 0em .5em;
+    grid-template-columns: 1fr 1fr 1fr;grid-template-rows: 1fr;grid-template-areas: 'slide';}
+    #header{margin-left: 3em;width: 5em;margin-top: 1em;}
+}
+
+
+@media screen and (min-width: 1440px){
+    #inspiration{grid-area: ins;margin: -5.5em 0em -.45em -.4em;}
+
+    #about_us{font-size: 1.1em;margin-left: 1em;
+        text-align: left;line-height: 1.6em;width: 21em;margin: -2.5em 0em 0em 4.5em;
+        height: 16em;border-radius: 1em;padding: 2em 1em 0em 2em ;
+        }
+
+
+
+#about{display: grid;grid-template-columns: 1fr 1fr;grid-template-rows: 1fr;
+       grid-template-areas: 'ins slide';
+    }
+       #slide_show{grid-area: slide;display: grid;
+        grid-template-columns: 15em 15em 15em;grid-template-rows: 1fr;grid-template-areas: 'slide';}
+       img{width: 14em;padding: 0em 1em 1em 0em;}
+       #header{margin-left: 37%;margin-top: 2em;}
+  
+}
+
+</style>
+</head>
+
+
+
+<body>
+    {%extends 'base_pg.html'%}
+    {%block content%}
+
+<div id="contenuto">
+
+<div id="about">
+   
+    <div id="inspiration">
+        <h1 id="header" class="headers">About us</h1>
+<p id="about_us">The name of our sweater shop was inspired by two nicknames gatto e gallina, and their metamorphosis made <em>gattolina</em>.<br>
+Our delivery is fast enough but the bigger your order the faster will be our service.
+</p></div>
+<div id="slide_show">
+<img src="/static/img/20.webp" id="1">
+<img src="/static/img/2.webp" id="2">
+<img src="/static/img/b.webp" id="3">
+<img src="/static/img/e.webp" id="4">
+<img src="/static/img/3.jpg" id="5">
+<img src="/static/img/f.webp" id="6">
+<img src="/static/img/g.jpeg" id="7">
+<img src="/static/img/j.jpg" id="8">
+<img src="/static/img/d.webp" id="3">
+
+</div>
+</div>
+</div>
+<hr>
+{%endblock%}
+<script src="pg.js">
+</script>
+</body>
+</html>

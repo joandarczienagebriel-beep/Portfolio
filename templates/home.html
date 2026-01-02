@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="jquery-3.7.1.js"></script>
+        <style>
+      
+  
+  #blurb{line-height: 2em;text-align: center;padding: 4em .5em 10em .5em;font-weight: 600;font-size: 1.2em;
+  background-image: url('/static/img/bel_small.jpeg');background-size: 20em;
+  background-repeat: no-repeat;margin: -.6em -.5em 0em -.5em;color: white;}
+  #today{display: grid;grid-template-columns: 1fr;grid-template-rows: 1fr 1fr 1fr;padding: 0em .7em 0em .7em;}
+  .sample{margin: 0em 0em -.5em -.2em;}
+    .home_p{line-height: 1.4em;border: 1px solid;border-radius: 0 0 4px 4px;
+      border-top: none;padding: 1em 0em 1em .5em;margin-top: -.4em;box-shadow: 2px 2px 4px rgb(100, 99, 99);}
+  #learn{border: 1px solid #6dcb99;width: 21.4em;margin: -4.4em 0em -1.1em -.55em;
+    padding: .6em .4em;text-align: center;font-size: .9em;background-color: #6dcb99;a{color: white;}}
+ 
+  #sign{background-color:#009946;
+    color: white;font-size: 1em;width: 20.13em;text-align: center;margin-left: -.55em;margin: 1em 0em -2em -.55em;
+    padding: 1.2em 0em;a{color: white;}}
+  p{line-height: 1.2em;}
+  #recent_header{text-align: center;margin: 2em 0em 1em .6em;font-size: 1em;}
+  #tips{display: none;}
+  .readmore_home{margin: 2em 0em 0em 7.1em;}
+  h3{width: 18em;}
+  #welcomeblurb{border-bottom: 1px solid black;padding-bottom: 8em;}
+ 
+@media screen and (min-width: 375px){
+  #learn{width: 25.25em;padding: .8em .4em;}
+  #sign{width: 23.6em; padding: 1.4em 0em;}
+  #today{margin-left: .9em;}
+  #recent_header{margin-left: 2.4em;}
+  .readmore_home{margin-left: 8.6em;}
+  #blurb{padding-top: 6em;}
+  .sample{margin-left: -.7em;}
+}
+@media screen and (min-width: 425px){
+  #blurb{background-size: 26em;padding-bottom: 6.5em;margin: -.5em -.8em 3.7em -.5em;}
+#learn{font-size: 1em;width: 26.2em;}
+  #sign{width: 27.1em;}
+  .readmore_home{margin: 2.5em 0em 0em 10.2em;}
+  #recent_header{margin-left: 4em;}
+  .sample{margin-left: -.5em;}
+}
+@media screen and (min-width: 768px) {
+  #learn{border: 1px solid #6dcb99;width: 10em;margin: 0em 0em 3em 39.4%;font-size: .9em;
+    padding: .4em;text-align: center;}
+ 
+  #sign{margin-left: 40%;padding: 1.2em;
+    color: white;font-size: 1em;width: 7em;}
+    
+    #blurb{font-size: 1.15em;line-height: 2.3em;background-image: none;margin: 1em 0em -4em -.5em;}
+
+
+#today{width: 30em;margin-left: 8em;}
+#tips{display: block;margin: 0em 0em 2em 30%;}
+.tips{border-bottom: none;color: white;font-size: 1em;}
+#recent_header{margin: 3em 0em 3em 14.5em;}
+.sample{background-color: #009946;color: white;margin-bottom: 2em;padding: 1em;height: 30em;}
+.readmore_home{margin-left: 12.8em;}
+#welcomeblurb{background-image: url('/static/img/coral.jpeg');background-repeat: no-repeat;
+background-size: cover;
+margin: -3em -.5em 1em -.5em;}
+img{width: 35em;height: 16em;}
+.home_p{box-shadow: none;border: none;line-height: 1.6em;}
+}
+@media screen and (min-width: 1024px) {
+  #blurb{width: 35em;margin: -2em 0em -4em 2em;}
+  #learn, #sign{margin-left: 29%;}
+  #sign{font-size: 1.1em;padding: 1em;}
+  #today{display: grid;grid-template-columns: 21em 21em 21em;grid-template-rows: 1fr;margin: 1em .5em 2em 0em;}
+  .sample{margin-right: 1em;border-radius: 1em;}
+  #welcomeblurb{
+margin: -.5em 0em 0em 0em;padding: 6em 0em 10em 0em;}
+   
+    .tips{display: list-item;list-style-type: disc;margin-left: -15%;}
+    .readmore_home{margin-left: 7em;}
+    img{height: 12em;}
+    #recent_header{margin-left: 22em;}
+    p{line-height: 1.6em;}
+  }
+
+
+@media screen and (min-width: 1440px) {
+  #blurb{font-size: 1.5em;font-weight: 550;}
+ #tips{font-size: 1.1em;}
+ #today{display: grid;grid-template-columns: 30em 30em 30em;grid-template-rows: 1fr;margin: 2em 0em 0em .3em;
+}
+
+#sign, #learn{margin-left: 28.5%;}
+.sample{margin-right: 2em;margin-left: 2em;padding: 1em;}
+#recent_header{font-size: 1.3em;margin: 4em 0em 2em 26em;}
+.readmore_home{font-size: 1em;margin: 2em 0em 0em 35%;}
+p{line-height: 2em;}
+#welcomeblurb{padding-bottom: 12em;border-color: white;width: 97%;margin-left: 1.5em;}
+img{height: 13em;margin-left: 2em;width: 20em;}
+
+}
+                 </style>
+
+    </head>
+    <body>
+        {%extends 'base.html'%}
+{%block content%}
+<div class="content">
+<div id="welcomeblurb">
+      
+        
+    <h1 id="blurb">HEY YOU! IT'S ABOUT TIME THAT YOU START TRAVELLING.<br> GET INFO ABOUT THE TRENDING TRAVELING DESTINATIONS FROM ADVENTUREUS.</h1>
+     <p id="learn"> <a href="{%url 'about'%}">Learn more about us</a></p>
+    
+          <ul id="tips">
+            <li class="tips">Get the best time of your life using your budget</li>
+            <li class="tips">Must taste foods.</li>
+            <li class="tips">Must visit amusement destinations.</li>
+            <li class="tips">What time of the year to travel.</li>
+          </ul>
+
+   
+   <p id="sign"> <a  href="{%url 'signup'%}">SIGN UP</a></p>
+</div>
+
+      <h3 id="recent_header">RECENT POSTS</h3>
+      <div id="today">
+        
+        <div class="sample">
+          <h3>Venice, Italy</h3>
+          <img src="/static/img/venice.jpeg" alt="picture of Venice">
+      
+      <p class="home_p">Positano reminds me of the villages of Cinque Terre but I notice 
+        right away how much larger this town is.</p><p class="readmore_home"><a href="#">Read more</a></p>
+        </div>
+
+        <div class="sample">
+          <h3>Pyrenees, Spain</h3>
+          <img src="/static/img/us.jpeg" alt="picture of the Pyrenees mountains in Spain">
+       
+      <p class="home_p">A beautiful and unique place to visit.</p>
+     <p class="readmore_home"> <a href="#">Read more</a></p>
+     </div>
+
+
+        <div class="sample">    
+          <h3>Coral Reefs, Red Sea (Eritrea)</h3>
+          <img src="/static/img/sea1.jpeg" alt=" picture of coral reefs in the Red Sea(Eritrea)">
+       
+      <p class="home_p">Closest to their new dig site in 
+        Tuscany leaving me to ride the rest of the way to Cinque Terre 
+        alone.
+
+      </p><p class="readmore_home"><a href="#">Read more</a></p></div>
+
+      </div>
+      </div>
+      {%endblock%}
+      <script>
+
+              </script>
+     
+    </body>
+</html>

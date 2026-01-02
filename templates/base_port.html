@@ -1,0 +1,142 @@
+{%load static%}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta  name="viewport" content="width=device-width, initial-scale=1">
+       
+        <script src="{% static 'js/jquery-3.7.1.js'%}"></script>
+        <style>
+          img{max-width: 100%;}
+    body{background-color: black;color: white;}
+          #site_id{font-size: 1.4em;color: white;}
+         
+          .nav_small,a{text-decoration: none;color: white;}
+        
+          #content{display: grid;grid-template-rows: 5em 6em;grid-template-columns: 1fr .5fr;
+            grid-template-areas: "siteid menu"
+                                 "nav     nav";}
+       #nav_small{grid-area: nav;border: 2px solid white;border-radius: 1em;font-size: 1em;text-align: center;margin: -2.3em 0em 0em 60%;height: 5.4em;}
+            #site_id{grid-area: siteid;margin-top: .3em;}
+            #menu{grid-area: menu;margin-left: 4em;}
+            nav{display: none;}
+          footer{margin-top: 5em;ol, li{list-style-type: none;margin-top: 1.5em;margin-left: -.5em;}}
+        
+            @media screen and (min-width: 375px){
+           #menu{margin-left: 6em;}
+              #nav_small{width: 8em;margin-left: 63%;}
+            }
+            @media screen and (min-width: 425px){
+              #nav_small{margin-left: 64%;width: 8em;}
+            }
+            @media screen and (min-width: 425px){
+              #nav_small{margin-left: 68%;}
+            }
+          @media screen and (min-width: 768px){
+       #menu{margin-left: 13em;}
+            #nav_small{width: 8em;margin-left: 81%;height: 6em;}
+            footer{margin-top: 5em;}
+            #site_id, .nav_small{font-size: 1.1em;}
+          }
+    
+          @media screen and (min-width: 1024px){
+        ul,li{list-style-type: none;}
+            #menu{display: none;}
+    #nav_small{display: none;}
+           
+              h2{font-size: 3.2em;}
+                #site_id{font-size: 1.2em;margin-left: 1em;}
+                nav{display: flex;flex-direction: row;margin-left: 9em;
+                }  
+                .nav{margin-left: .8em;font-size: 1.2em;}
+                #footer{display: flex;flex-direction: row;.social_md{margin-right: 2em;}
+                ol,li{margin-top: .5em;margin-bottom: 3em;}}
+                #rights{margin-left: -1em;margin-right: 14em;}
+          }
+          @media screen and (min-width: 1440px){
+      nav{margin-left: 18.5em;}
+            .nav{margin-left: 1em;}
+            #content{padding-top: 1em;margin: -1em 0em 0em -.5em;}
+            #rights{margin-right: 25%;}
+          
+          }
+        </style>
+    </head>
+    <body>
+   
+        <div id="content">
+           <a href="{%url 'home_port'%}"> <p id="site_id">Joandarc  Ziena</p></a>
+          
+            <div id="nav_small">
+
+              
+              <a href="{%url 'home_port'%}"><p class="nav_small" >About me</p></a>
+             
+              
+             
+              <a href="{%url 'contact_port'%}"><p class="nav_small">Contact</p></a>
+             
+            </div>
+            <nav>
+
+              
+               <a href="{%url 'home_port'%}"><p class="nav" >About me</p></a>
+               
+               
+              
+               <a href="{%url 'contact_port'%}"><p class="nav">Contact</p></a>
+              
+            </nav>
+            <div id="menu">
+              <svg version="1.1" 
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" 
+              width="30" height="30" viewBox="0 0 70 70">
+              <a href="#about">
+              <g>
+             <rect x="10" y="30" width="65" height="4" fill="white"
+              stroke-width="2" stroke="white"/>
+             <rect x="10" y="45" width="65" height="4" fill="white"
+              stroke-width="2" stroke="white"/>
+             <rect x="10" y="60" width="65" height="4" fill="white"
+              stroke-width="2" stroke="white" /></g></a>
+  
+             </svg>
+            </div>
+
+        </div>
+  
+{%block content%}
+{%endblock content%}
+
+<footer>
+  <hr>
+<ol id="footer"><li id="rights">All Rights Reserved</li><li class="social_md"> <a href="Joandarczienagebriel@gmail.com">Email</a></li>
+  <li class="social_md"><a href="LinkedIn">LinkedIn</a></li>
+<li class="social_md"><a href="">Instagram</a></li></ol>
+</footer>
+
+<script>
+$('a').mouseover(function(){$(this).css('text-decoration', 'underline')})
+.mouseout(function(){$(this).css('text-decoration', 'none')})
+$('#nav_small').css('display', 'none')
+$('#menu').click(function(){$('#nav_small').toggle()});
+$('#contenuto').click(function(){$('#nav_small').css('display', 'none')});
+
+$('.services').css('display', 'none');
+
+
+$('#service').mouseover(function(){$('.services').show('slow', 'linear')})
+$('#service_detail').mouseover(function(){$('.services').show('slow', 'linear')})
+$('.works').css('display', 'none');
+
+$('#work').mouseover(function(){$('.works').show('slow', 'linear')});
+$('#get_in_touch').mouseover(function(){$(this).css('background-color', 'rgb(88, 187, 30)')}); 
+$('#get_in_touch').mouseout(function(){$(this).css('background-color', 'green')});  
+$('#viola').click(function(){$('body').css('background-color','#c3a7e2')})
+$('#black').click(function(){$('body').css('background-color','black')})
+$('#submit').mouseover(function(){$(this).css('background-color', 'green')});
+$('#submit').mouseout(function(){$(this).css('background-color', 'black')}); 
+    </script>
+    </body>
+</html>

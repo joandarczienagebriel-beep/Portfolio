@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        <style>
+     h1{margin-top: 3em;margin-bottom: 3em;}
+         .content{text-align: center;}
+        
+                   @media screen and (min-width: 1024px) {
+              h1{margin-top: 8em;}
+           .content{display: grid;grid-template-columns: 1fr .5fr;grid-template-rows: 1fr;grid-template-areas: 'blog side';}
+           .blog{grid-area: blog;margin-top: -25%;}
+           #sidebar{grid-area: side;}
+           h4{margin-top: 3em;}
+           
+            
+          
+              .content{margin-top: 10em;}
+              #recentpost, #onthepage{li{text-align: start;margin-left: 3em;}
+              #recentpost{li{line-height: 1.7em;}}
+            }
+            h4{text-align: start;margin-left: 8em;}
+            }
+            @media screen and (min-width: 1440px) {
+              #recentpost{li{line-height: 1.7em;}}
+       .content{margin-top: 5em;}
+    
+  }
+      
+   
+
+       
+    
+ 
+            </style>
+
+    </head>
+    <body>
+        {% extends 'base.html'%}
+        {%block content%}
+        {% include "nav.html" with active_link='list' %}
+        <div class="content">
+          <div class="blog"> 
+<h1>EAST-AFRICA</h1>
+ 
+  {%for blog in bookreview_list%}
+  
+  <h2 id="title">{{blog.title}}</h2>
+  <p id="date">by {{blog.author}} | {{blog.date}}</p>
+    
+  
+  
+  
+  <a href="{{blog.get_absolute_url}}"><p id="readmore">Read more</p></a>
+          
+  {%endfor%}
+  </div>
+  
+  
+  
+  
+  
+  <div id="sidebar">
+      
+      <div id="recentpost"><h4>Recent posts on East Africa</h4>
+          <ol>
+            <a href=""><li class="list">"Must visit places in Kenya"</li></a>
+          <a href=""><li class="list">"Addis Abeba."</li></a>
+        <a href=""><li class="list">"Your next destination this summer."</li></a>
+      </ol>
+     
+  </div>
+      <div id="onthepage">
+      <h4>On the page</h4>
+      
+   
+      <ol><li class="list"><a href="">1. Kenya, Nairobi</a></li>
+       <li class="list"><a href="">2. Asmara, Eritrea</a></li>
+       <li class="list"><a href="">3. Addis Abeba, Ethiopia</a></li>
+      
+      <li class="list"><a href="">4. Kampala, Uganda</a></li>
+      
+        
+              <li class="list"><a href="">facebook</a></li>
+               <li class="list"><a href="">LinkedIn</a></li>
+               <li class="list"><a href="">Instagram</a></li>
+              </ol>
+            </div></div>
+            {% include "pagination.html" with page=page_obj %}
+  
+          </div>
+            
+          {%endblock%}
+         
+      </body>
+  </html>

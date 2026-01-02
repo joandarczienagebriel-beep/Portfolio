@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<meta charset='utf-8'>
+<head>
+<meta name="viewport" content="width=device-width, 
+ initial-scale=1">
+<title>navigation</title>
+
+
+<style>
+
+
+#why{
+padding: 6em 0em 3em 0em;
+background-repeat: no-repeat;width: 20.5em;
+background-image: url('/static/img/14.webp');background-size: 20.5em 26em;
+
+margin: 0em 0em -6em -1em;
+}
+.text{color: white;
+font-size: 1.3em; margin-left: 1em;
+width: 14em;line-height: 1.6em;text-align: center;
+}
+
+#order{border: 2px solid white;
+font-size: 1em;
+padding: .8em 1.5em;
+text-decoration: none;
+margin: 0em 0em 0em 6.2em;background-color: #ff5200;
+a{color: white;}
+}
+h3{color: white;text-align: center;margin-left: -1em;}
+.specials{margin: 0em 0em 1em .5em;}
+img{width: 17em;height: 17em;}
+#layout{display: grid;grid-template-columns: 1fr;grid-template-rows: 1fr 1fr 1fr 1fr 1fr;grid-template-areas: 'layout';margin-left: 1em;}
+#today_header{margin-left: 1em;color: white;margin-top: -1em;}
+#today{background-color: #004b98;padding-top: 4em;padding-bottom: 5em;margin: 0em -.5em -.6em -.5em;}
+#main_img1, #main_img2{display: none;}
+#arrow{margin-left: 5em;font-size: 2em;color: white;}
+@media screen and (min-width: 375px){
+
+
+#order{margin: -1em 0em 0em 7.8em;}
+
+.specials{margin: 0em 0em 2em 2.2em;}
+#why{margin: 0em 0em -11em -.5em;background-size: 26em;height: 24em;width: 23.45em;}
+#today_header{font-size: 1.4em;}
+#arrow{margin-left: 5.8em;}
+.text{font-size: 1.4em;margin: 0em 0em -.5em 1.4em;}
+
+}
+@media screen and (min-width: 425px){
+#why{background-size: 28em 28em;margin-bottom: -9em;width: 26.6em;}
+#layout{margin-left: 2.5em;}
+.text{margin-left: 2.5em;}
+#order{margin-left: 33%;font-size: 1.1em;}
+h3{margin-left: -2.5em;}
+#arrow{margin-left: 6.5em;}
+
+}
+
+
+@media screen and (min-width: 768px){
+
+#why{
+    background-size: 50em 45em;
+background-repeat: no-repeat;padding: 1em 21.7em 10em 0em;margin: 0em 0em -5.3em -.5em;
+line-height: 2.3em;
+}
+.text{text-align: center;width: 18em;margin-top: 6em;}
+
+#order{margin-left: 41%;font-size: 1.2em;}
+#layout{display: grid;grid-template-columns: 1fr 1fr;grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 'layout';margin-left: .5em;}
+#two, #four, #six{margin-left: 2.5em;}
+
+#today{padding-top: 1.5em;margin-right: -.8em;}
+#today_header{margin-left: 1em;padding-top: 2em;font-size: 1.6em;}
+#arrow{margin-left: 7.8em;}
+}
+
+@media screen and (min-width: 1024px){
+   
+    #layout{display: grid;grid-template-columns: 20em 20em 20em;grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'layout';}
+    #two, #three, #four, #five, #six, #sette{margin: 0em 0em 4em .5em;}
+#five{margin-left: 1em;}
+#why{background-size: 32.5em 34em;
+     grid-area: why;}	
+.text {font-size: 1.6em;width: 14em;text-align: center;}
+
+#order{margin: -1em 0em 0em 38.5%;border-color: white;}
+
+
+    #main{display: grid;grid-template-rows: 30em;grid-template-columns: 32.3em 32.5em;
+        grid-template-areas: 'why one';}
+    #main_img1{grid-area: one;display: block;width: 32.5em;height: 34em;margin-left: -1em;}
+    #main_img2{display: none}
+    #arrow{font-size: 4em;font-weight: bolder;margin: .5em 0em 1em 3.6em;}
+    h3{margin-left: 1.5em;}
+}
+@media screen and (min-width: 1440px){
+    
+    
+    #order{width: 10em;margin: 1em 0em 0em 58%;}
+    #layout{display: grid;grid-template-columns: 21em 21em 21em 21em;grid-template-rows: 1fr 1fr;
+        grid-template-areas: 'layout';margin-left: 2em;}
+      
+        body{background-repeat: no-repeat;background-size: 100%;}
+     
+    
+     
+
+#today_header{margin-left: 1em;}
+#today{margin: 0em -.54em -.5em -.5em;}
+#main{display: grid;grid-template-rows: 1fr;grid-template-columns: 26em 41.65em 26em;
+    grid-template-areas: 'one why two';margin-bottom: -4em;}
+    #why{background-image: url('/static/img/m.jpeg');background-size: 41.6em 43em;grid-area: why;height: 28em;margin-left: -1em;}
+    #main_img1{grid-area: one;width: 27em;height: 39em;}
+    #main_img2{grid-area: two;width: 25em;height: 39em;display: block;margin-left: -1.05em;}
+    .text{width: 16em;font-weight: bold;font-size: 2.2em;text-align: center;margin: 3em 0em 0em 1em;}
+    #arrow{font-size: 4em;margin-left: 5em;}
+h3{margin-left: .4em;}
+    }
+		
+</style>
+</head>
+
+{%extends 'base_pg.html'%}
+{%block content%}
+<body>
+<div id="contenuto">
+    <div id="main">
+<img src="/static/img/y.jpg" id="main_img1">
+
+
+<div id="why">
+    <p class="text">GET THE BEST SWEATERS IN TOWN<br>at our place 250 Broome Street, New York, NY, 1002</p>
+   <p id="arrow"> ↓</p>
+<button id="order">
+    <a href="">SHOP NOW</a>
+</button>
+</div>
+<img src="/static/img/gray.jpg"  id="main_img2">
+
+    </div>
+<div id="today">
+<h1 id="today_header">On Sale</h1>
+<div id="layout">
+
+<a href="#">
+<div id="two">
+    <h3>Ashy sweater</h3>
+<img src="/static/img/1.jpg" alt=""  class="specials">
+</div>
+</a>
+
+<a href="#">
+<div  id='three'>
+<h3>Sky-blue sweater</h3>
+<img src="/static/img/f.webp" alt="" class="specials">
+</div>
+</a>
+
+<a href="#">
+<div id='four'>
+<h3>Eyelet sweater</h3>
+<img src="/static/img/3.jpg" alt="" class="specials">
+</div>
+</a>
+
+<a href="">
+<div id='five'>
+    <h3>Nordic sweater</h3>
+<img src="/static/img/e.webp" alt="" class="specials">
+</div>
+</a>
+
+<a href="#">
+<div  id='six'>
+    <h3>Butterfly sweater</h3>  
+<img src="/static/img/14.webp" alt="" class="specials">
+</div>
+</a>
+
+<a href="#">
+<div id='sette'>
+    <h3>Lace sweater</h3>
+<img src="/static/img/8.jfif" alt="" class="specials">
+</div>
+</a>
+
+</div>
+</div>
+</div>
+{%endblock%}
+
+
+</script>
+</body>

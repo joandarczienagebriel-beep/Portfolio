@@ -1,0 +1,44 @@
+{# nav.html #}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style> @media screen and (min-width: 320px) {
+            #active_link{display: flex;justify-content: flex-start;margin-left: -2em;margin-bottom: -2em;
+                a{color: green;}
+           ul{height: 1.5em;}li{border-bottom: none;color: green;list-style-type: none;}}
+        }
+        @media screen and (min-width: 1024px) {
+
+            #active_link{margin-bottom: -2em;}
+        }
+        @media screen and (min-width: 1440px) {
+
+#active_link{margin-bottom: -3em;}
+}
+            </style>
+
+    </head>
+    <body>
+        <ul id="active_link">
+            {%if active_link == "home"%} <li  class="active">Home › </li> {%endif%}
+            {%if active_link == "about"%}<li  class="active" >About › </li>{%endif%}
+
+            {%if active_link == "list"%}<li  class="active" > East-African-posts › </li>{%endif%}
+             
+            {%if active_link == "detail"%}<li  class="active" ><a href="{%url 'list'%}">East-African-posts ›</a> {{bookreview.title}} </li>{%endif%} 
+
+                
+            {%if active_link == "europelist"%}<li  class="active" >West-European-posts ›</li>{%endif%}
+             
+            {%if active_link == "europe_detail"%}<li  class="active" ><a href="{%url 'europelist'%}">West-European-posts › </a>
+                {{europe.title}} </li>{%endif%} 
+    
+    </ul>
+        
+</body>
+</html>
+
+

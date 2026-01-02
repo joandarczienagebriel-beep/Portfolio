@@ -1,0 +1,382 @@
+{%load static%}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link href="{%static 'css/bootstrap-5.3.1-dist/css/bootstrap.css'%}">
+        <script src="{% static 'js/jquery-3.7.1.js'%}"></script>
+       
+        <style>
+            
+           a{text-decoration: none;}
+
+a{color: black;}
+            img{max-width: 100%;}
+           
+    #adventure{color: green;font-weight: bolder;font-size: 1.1em;}
+
+header{display: grid;grid-template-columns: 3em 9.5em 6em;grid-template-rows: 3em;
+    grid-template-areas: "icon siteid hello logout";}
+#siteid{grid-area: siteid;margin-top: -.5em;margin-left: 1.7em;}
+
+    #menu{grid-area: icon;margin-left: 0em;padding: 0em;}
+
+h1{font-size: 1.2em;}
+h2{font-size: 1.1em;}
+h3{font-size: 1em;}
+    #tag{font-size: .7em;margin-left: 1.4em;margin-top: .3em;}
+
+
+
+.readmore_home{border: 1px solid  #00833f;
+    width: 5em;
+    padding: .7em .3em .7em .85em;background-color: #00833f;margin-bottom: 5em;font-size: .9em;a{color: white;}}
+   
+    footer{margin-top: 8em;font-size: .8em;border-top: 1px solid;
+        display: grid;grid-template-rows: 1fr;grid-template-columns: 10em 7em;grid-template-areas: 'footer';
+    
+       }
+.footer{ li{list-style-type: none;border-bottom: none;padding-top: -1.4em;}}
+     
+    #us{font-weight: bolder;margin: -2.01em 0em 0em 6.3em;font-size: 1.1em;}
+
+    #about{grid-area: about;display: flex;border: 1px solid;flex-direction: column;
+    text-align: start;list-style-type: none;
+    border-left: none;background-color: white;position: absolute;border-top: none;margin-left: -.48em;}
+    #about,li{padding: .5em;font-size: 1em;border-bottom: .5px solid;}
+    #about{width: 55%;margin-top: -5em;}
+    .opt{padding: .5em;}
+    .list_divider{color: green;border-bottom: .4px solid green;padding-top: 1.5em;font-size: .9em;}
+    #sub{margin-bottom: 4em;}
+    #nav_1024{display: none;}
+    #hello{display: none;}
+    #adventureus{text-align: start;margin: -1em 0em 3em 0em;padding: 1em 0em 0em 0em;}
+    #date{font-size: .8em;width: auto;}
+        
+          #readmore{border: 1px solid;margin: 0em 0em 5em 7em;
+    width: 5em;
+    padding: .7em;background-color: green;font-size: .9em;color: white;}
+          #sidebar{display: none;}
+          #recentpost_detail{display: none;}
+.content_detail{margin-top: 4em;}
+#title_detail{font-size: 1.3em;}
+#detailpage{padding: 1em;}
+#info{font-size: .8em;width: auto;}
+#comment{margin-top: 4.5em;}
+#comment_author{font-size: .7em;color: rgb(148, 137, 137);}
+#postdetail{line-height: 1.8em;}
+#save{padding: .7em;color: white;background-color: green;font-size: 1em;}
+h4{font-size: .8em;}
+#comment_given{margin-top: -.3em;font-size: .8em;font-weight: 400;}
+#comment_form{font-size: .8em;}
+hr{border: 1px solid green;}
+#search{display: none;}
+#out{grid-area: logout;}
+    #logout{font-size: .7em;padding: .3em;width: 6em;display: block;margin: .9em 0em 0em -5em;}
+    @media screen and (min-width: 375px){
+        header{display: grid;grid-template-columns: 3em 11em 7em;grid-template-rows: 3em;
+    grid-template-areas: "icon siteid hello logout";}
+#siteid{grid-area: siteid;margin-left: 3.5em;}
+
+    #menu{grid-area: icon;}
+
+     
+        #logout{grid-area: logout;margin-left: -4em;}
+        #nav_1024{display: none;}
+       
+        #readmore{margin-top: 2em;margin-left: 9.5em;}
+    }
+    @media screen and (min-width: 425px){
+        header{display: grid;grid-template-columns: 5em 11em 7em;grid-template-rows: 4em;
+            grid-template-areas: "icon siteid logout";}
+            #siteid{grid-area: siteid;margin: -1em 0em 0em 2em;}
+            #menu{grid-area: icon}
+            #logout{grid-area: logout;margin: 1em 0em 0em 8em;}
+            #adventure{font-size: 1.4em;}
+            #us{font-size: 1.4em;margin-top: -1.98em;}
+        #tag{margin-left: 3.2em;}
+        #nav_1024{display: none;}
+        #about{margin-top: -4.4em;}
+        #readmore{margin-left: 11em;}
+        hr{margin-top: -.5em;}
+    }
+    @media screen and (min-width: 768px){
+        h3{font-size: 1em;}
+        #about{width: 15em;margin-top: -6.3em;}
+        header{display: grid;grid-template-columns: 6em 10em 1fr;grid-template-rows: 6em;
+            grid-template-areas: "icon siteid logout";margin-bottom: -1em;}
+        #siteid{grid-area: siteid;margin-left: 120%;}
+            #menu{grid-area: icon}
+          
+            #nav_1024{display: none;
+            font-size: 1.1em;}
+            li{font-size: 1em;}
+    
+            #logout{margin: 1em 0em 0em 29em;}
+            #logout, button{grid-area: logout;font-size: .9em;border: none;background-color: white;padding: 0em;text-align: start;}
+            #sub{margin-bottom: 5.7em;}
+            #readmore{margin-left: 23em;}
+            #title_detail, #info{text-align: center;}
+            #body{width: 40em;margin-left: 2.5em;line-height: 1.6em;}
+            footer{margin-top: 12em;}
+           
+            #tag{width: 11em;}
+          
+          h2{font-size: 1.3em;}
+          .readmore_home{
+    padding: .7em .3em .7em .9em;
+    }}
+    @media screen and (min-width: 1024px) {
+        #menu{display: none;}
+        #siteid{margin-left: -55%;font-size: 1.1em;}
+        #signin_b, #login_b{border: 1px solid;margin-right: 1em;}
+        #nav_1024, li{list-style-type: none;font-size: .9em;}
+       #nav_1024{display: grid;grid-template-columns: 1fr;grid-template-rows: 4em 11.5em;
+        grid-template-areas: 'nav nav'
+                             'opt opt';
+        list-style-type: none;font-size: .9em;margin: -7em 0em 0em 12em;}
+      #home{grid-area: nav;display: flex;flex-direction: row;}
+        #opt_b{grid-area: opt;margin-left: 6.5em;position: relative;margin-top: -.1em;
+            border: 1px solid black;border-top: none;background-color: white;width: 13em;height: 10.22em;}
+
+            .opt_b{border-bottom: .3px solid white;
+                font-size: .8em;color: black;padding: 1em;margin-left: -3.45em;}
+           
+                
+        #signin_b{margin-left: 31em;}
+      #login_b{margin-right: -1em;}
+       .main, .noi{border-bottom: none;}
+        
+       #hello, #out{display: none;}
+    
+       #hello_b{margin-left: auto;}
+       #logout_b{margin-left: -1em;color: #00833f;}
+      
+       #east_asia{border-bottom: none;padding-bottom: 1.05em;}
+       #tag{margin-top: -.1em;}
+    
+        
+              #readmore{margin-left: 20em;}
+              #sidebar{display: block; }
+              #sidebar{padding: 0em 5% 0em .5em;line-height: 2em;width: 20em;margin-left: 10%;
+              font-size: .8em;}
+              .list{list-style-type: none;border-bottom: none;}
+              #onthepage{line-height: 1.7em;}
+              #info{font-size: .9em;margin-left: 1em;}
+         
+         #detailpage{display: grid;grid-template-columns: 1fr;grid-template-rows: 1fr 1fr;
+           grid-template-areas: "postdetail"
+                                "  comment ";}
+        #postdetail{grid-area: postdetail;margin-top: -6em;padding: 0em 6em 0em 2em;}
+        #recentpost_detail{grid-area: sidebar;margin: 25% 0em 0em 3em;}
+        #title_detail{text-align: center;}
+       #comment{grid-area: comment;margin: 4% 0em -1% 0em;}
+       #body{width: 43em;margin-left: 4em;}
+     #title{font-size: 1.3em;}
+     footer{margin-top: 14em;}
+    
+     hr{margin-top: -10.5em;border: 1px solid green;display: block;width: 64em;margin-left: -.5em;}
+     .content_detail{margin-top: 13em;}
+     #search{display: block;width: 2em;margin: -1.7em 0em 0em -.5em;}
+     #us{margin-top: -1.96em;}
+    
+    }
+    @media screen and (min-width: 1440px) {
+        #nav_1024{font-size: 1em;margin: -6em 0em 0em 12em;}
+      
+        #signin_b{margin-left: 52em;width: 4.5em;padding-left: .9em;}
+        #adventure{font-size: 1.6em;}
+        #us{font-size: 1.6em;margin-top: -1.97em;}
+        #tag{font-size: .7em;margin: -.2em 0em 0em 4.2em;}
+       #logout_b{font-size: 1em;margin: .2em 0em 0em -.9em;}
+    
+        #hello_b{font-size: 1em;margin-top: .05em;}
+        h1{font-weight: 550;
+        }
+        footer{padding-bottom: 4em;margin: 7em -.5em 0em -.5em;}
+        #sidebar{line-height: 2.5em;text-align: center;width: 16em;margin-left: 33%;
+             }
+             
+             #sidebar, a{color: black;font-size: 1em;list-style-type: none;}
+    #recentpost{margin-top: 10em;font-size: .8em;}
+       #onthepage{margin-top: 6em;font-size: .8em;}
+      
+       
+    .blog{display: flex;flex-direction: column;align-items: center;margin-top: -4em;}
+    #title{margin-top: -1em;}
+    #title{font-size: 1.3em;margin-top: 3em;}
+    #date{font-size: 1em;   margin: 0em 0em 2em 0em;}
+  
+    #readmore{font-size: 1.2em;margin: 1em 0em 4em 1em;}
+    #body{margin-left: 25%;font-size: 1.1em;}
+ #title_detail{font-size: 1.4em;}
+#login_b{width: 3.5em;}
+#siteid{margin-left: -5em;}
+hr{margin-top: -11.7em;width: 92em;}
+.opt_b{margin-left: -3.1em;}
+.noi{width: 6.5em;}
+#search{padding: 0%;width: 2.2em;margin: -1.5em 0em 0em -2.3em;}
+#info{margin-left: 5.8em;}
+    }
+    
+  
+            </style>
+
+    </head>
+    <body>
+   
+        <header>
+
+            <div id="siteid">
+                <a href="{%url 'home'%}"> <h2 id="adventure">ADVENTURE</h2><h2 id="us">US</h2></a>
+                
+                <p id="tag">TRAVELLING BLOG</p>
+                </div>
+               
+               
+<div id="menu">
+                    <svg version="1.1" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    width="30" height="30" viewBox="0 0 70 70">
+                    <a href="#about">
+                    <g>
+                   <rect x="10" y="30" width="65" height="4" fill="black" 
+                    stroke-width="2" stroke="black"/>
+                   <rect x="10" y="45" width="65" height="4" fill="black" 
+                    stroke-width="2" stroke="black"/>
+                   <rect x="10" y="60" width="65" height="4" fill="black" 
+                    stroke-width="2" stroke="black" /></g></a>
+        
+                   </svg></div>
+                   {%if user.is_authenticated%}
+                   <p id="hello">Hello {{user.username}}, </p>
+                  <div id="out">
+                     <form method="post" action="{%url 'logout'%}" >{%csrf_token%} 
+                        <button type="submit" id="logout">Logout</button>
+                      
+                   </form></div>
+              
+              {%endif%}
+                  
+                 
+                
+               
+            
+</div>
+                   
+        </header>
+        <div id="nav_1024">
+            <ol id="home">
+               
+                <li class="main"><a href="{%url 'home'%}">HOME</a></li>
+                <li class="main" id="categories"><a href="#opt_b">CATEGORIES</a></li>
+               
+   
+                <li class="noi"><a href="{%url 'about'%}">ABOUT US</a></li>
+                <li class="main">
+                    <a href="">
+                    <svg version="1.1" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    
+                    width="50" height="50" viewBox="0 0 70 70" id="search"> 
+                 
+                    <g>
+                   <circle cx="40" cy="40" r="14" stroke="black" stroke-width="2" fill="none"/>
+                   <polygon points="49,51 60,60 " fill="black" stroke-width="2" stroke="black"/>
+                    </g>
+                 
+                   </svg>
+                    </a>
+                 
+                </li>
+               
+                {%if user.is_authenticated%}
+                
+                   <li id="hello_b" class="main">Hello {{user.username}}, </li>
+                  
+                   <li class="main"> <form method="post" action="{%url 'logout'%}" >{%csrf_token%} 
+                        <button type="submit" id="logout_b">Logout</button>
+                      
+                   </form></li>
+                   {%else%}
+     <li id="signin_b" class="access"><a href="{%url 'signup'%}">SIGN UP</a> </li><li id="login_b" class="access"><a href="{%url 'login'%}">LOG IN</a></li>
+        {%endif%}
+               
+             
+            </ol>
+            <ol id="opt_b">
+                <a href="{%url 'list'%}">  <li class="opt_b">East Africa</li></a>
+                    
+                <a href="{% url 'europelist'%}"> <li class="opt_b">West-Europe</li></a>
+                 <a href=""><li class="opt_b">South-America</li></a>
+                 <a href=""><li class="opt_b" id="east_asia">South-East of Asia</li></a></ol>
+                 
+            </div>
+            <hr>
+          <ol id="about" >
+            <li id="adventureus"><h2 >ADVENTUREUS</h2></li>
+                <a href="{%url 'home'%}"><li>HOME</li></a> 
+<li class="list_divider">CATEGORIES</li>
+                
+               <a href="{%url 'list'%}"><li class="opt">East Africa</li>
+                   
+                <a href="{% url 'europelist'%}"><li class="opt">West-Europe</li></a>
+                <a href=""><li class="opt">South-America</li></a>
+                <a href=""><li class="opt">South-East of Asia</li></a>
+   
+                <a href="{%url 'about'%}"><li class="list_divider">ABOUT US</li></a>
+                <a href="#"><li class="list_divider">RECENT POSTS</li></a>
+             
+          <p class="list_divider">ACCESS</p>
+                <a href="{%url 'signup'%}"><li id="login">Sign up</li></a><a href="{%url 'login'%}"><li>Log in</li></a>
+               <li id="sub">Subscribe</li></a>
+               </ol>
+
+        
+              
+              
+
+          {%block content%}
+{%endblock%}  
+
+<footer>
+   
+   <ul class="footer">
+    <li >Support</li> 
+    <a href="adventureus@gmail.com"><li>FAQ</li></a>
+    <a href="adventureus@instagram.com"><li>Forum</li></a>
+        <a href="adventureus@facebook.com"><li>Contact us</li></a>
+        </ul>
+  
+   <ul class="footer">
+    <li>Socials</li> 
+    <a href="adventureus@gmail.com"><li>Email</li></a>
+    <a href="adventureus@instagram.com"><li>Instagram</li></a>
+        <a href="adventureus@facebook.com"><li>Facebook</li></a>
+        </ul>
+
+</footer>  
+<script>
+$('#sign').mouseover(function(){$(this).css('background-color','#00833f')})
+.mouseout(function(){$(this).css('background-color','#009946')});
+$('a').mouseover(function(){$(this).css('text-decoration', 'underline')})
+.mouseout(function(){$(this).css('text-decoration', 'none')});
+$('#about').css('display', 'none');
+$('#menu').click(function(){$('#about').toggle()});
+$('.content').not('#menu').click(function(){$('#about').hide()});
+$('#opt_b').css('display','none');
+$('#categories').click(function(){$('#opt_b').toggle()});
+$('#categories').mouseover(function(){$('#opt_b').show()});
+$('body').not('#opt_b').click(function(){$('#opt_b').hide()});
+$('body').not('#categories').click(function(){$('#opt_b').hide()});
+$('.opt_b').mouseover(function(){$(this).css('background-color', 'green')})
+.mouseout(function(){$(this).css('background-color', 'white')})
+$('#opt_b').mouseleave(function(){$('#opt_b').hide()})
+$('#contenuto').click(function(){$('#nav_small').css('display', 'none')});
+</script>    
+</body>
+</html>

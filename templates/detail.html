@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <style>
+         @media screen and (min-width: 768px) {
+ 
+}
+              @media screen and (min-width: 1024px) {
+             #body{text-align: center;}
+            #postdetail{margin-left: 4%;}}
+            @media screen and (min-width: 1440px) {
+              #postdetail{margin-left: -2em;}
+              #title_detail,#info{margin-left: 4em;}
+            }
+            </style>
+
+    </head>
+    <body>
+        {% extends 'base.html'%}
+        {%block content%}
+        {% include "nav.html" with active_link='detail' %}
+<div class="content">
+        <div class="content_detail">
+          <div id="detailpage">
+  <div id="postdetail">
+  <h2 id="title_detail">{{bookreview.title}}</h2>
+  <p id="info">by {{bookreview.author}} | {{bookreview.date}}</p>
+  
+  
+  <p id="body">{{bookreview.body}}</p>
+  {%if bookreview.author.pk == request.user.pk %}
+<a href="{%url 'delete' bookreview.pk%}"><button type="submit">delete</button></a>
+{%endif%}
+  </div>
+  <div id="comment">
+    <h4>Comments</h4>
+    
+    {% for comment in bookreview.comment_set.all %}
+       <p id="comment_author">{{comment.author}}</p>
+       <p id="comment_given">{{comment}}</p>
+     
+       {%endfor%}
+    </div>
+       <h4>Add a comment</h4>
+  <form action="" method="post" id="comment_form">{% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" id="save">Save</button>
+  </form>
+          </div>
+{%endblock%} 
+
+    </body>
+</html>

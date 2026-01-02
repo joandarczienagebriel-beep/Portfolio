@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<meta charset='utf-8'>
+<head>
+<meta name="viewport" content="width=device-width, 
+ initial-scale=1">
+<title>navigation</title>
+<script src='jquery-3.7.1.js'></script>
+
+<style>
+
+
+
+#header{margin: 1em 0em 1.5em 25%;
+}
+
+
+
+#inspiration{font-size: 1.2em;line-height: 1.3em;padding: 1em;}
+#about_us{width: 15em;line-height: 1.8em;margin-bottom: 4em;}
+@media screen and (min-width: 375px){
+
+#about_us{margin-left: 1em;font-size: 1em;}
+#header{margin-left: 27%;}
+}
+
+@media  screen and (min-width: 425px) {
+    #about_us{margin-left: 2em;}
+    #header{margin-left: 4.3em;}
+}
+@media screen and (min-width: 768px){
+h1{margin-right: 5em;}
+#about_us{font-size: 1.1em;width: 18em;margin: 2em 0em 4em 4.4em;}
+#inspiration{margin-left: 5.4em;}
+#header{margin-left: 30%;}
+}
+@media screen and (min-width: 1024px){
+   
+#about_us{margin: 0em 0em 6em 9em;
+    text-align: left;border-radius: 1em;}
+#header{width: 5em;margin: 1em 0em 1em 9em;}
+}
+
+@media screen and (min-width: 1440px){
+
+
+    #about_us{font-size: 1.1em;margin-left: 1em;
+        text-align: left;line-height: 1.6em;width: 21em;margin: -3em 0em 0em 28.5%;
+        border-radius: 1em;padding: 2em 1em 0em 2em ;height: 16em;
+        }
+
+      
+    #header{margin: 2em 0em 2em 40%;}
+}
+
+</style>
+</head>
+
+
+
+<body>
+    {%extends 'base_pg.html'%}
+    {%block content%}
+    <div id="contenuto">
+    <div id="about">
+    
+    <div id="inspiration">
+        <h1 id="header" class="headers">Contact us</h1>
+<p id="about_us">You can reach us through our phone number <a href="">+29189090211</a> or hit us on <a href="">Instagram</a> and <a href="">Email</a>.
+</p></div>
+</div>
+    </div>
+    <hr>
+{%endblock%}
+
+</script>
+</body>
+</html>
